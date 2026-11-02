@@ -8,7 +8,7 @@ router.get("/login/success", (req, res) => {
   if (req.user) {
     res.status(200).json({ success: true, user: req.user });
   } else {
-    res.status.json({ success: false, user: null });
+    res.status(401).json({ success: false, user: null });
   }
 });
 
