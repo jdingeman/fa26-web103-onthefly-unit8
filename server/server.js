@@ -12,6 +12,7 @@ import authRoutes from "./routes/auth.js";
 const app = express();
 
 app.use(express.json());
+app.set("trust proxy", 1);
 app.use(
   session({
     secret: "codepath",
@@ -24,7 +25,6 @@ app.use(
   }),
 );
 
-app.set("trust proxy", 1);
 app.use(
   cors({
     origin: "https://fa26-web103-onthefly-client.onrender.com",
