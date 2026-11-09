@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(
   session({
     secret: "codepath",
-    resave: "false",
+    resave: false,
     saveUninitialized: true,
   }),
 );
