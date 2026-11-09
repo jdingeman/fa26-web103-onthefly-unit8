@@ -17,6 +17,10 @@ app.use(
     secret: "codepath",
     resave: false,
     saveUninitialized: true,
+    cookie: {
+      sameSite: "none",
+      secure: true,
+    },
   }),
 );
 
@@ -26,10 +30,6 @@ app.use(
     origin: "https://fa26-web103-onthefly-client.onrender.com",
     methods: "GET,POST,PUT,DELETE,PATCH",
     credentials: true,
-    cookie: {
-      sameSite: "none",
-      secure: true,
-    },
   }),
 );
 
