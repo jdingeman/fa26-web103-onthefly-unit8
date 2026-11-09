@@ -33,8 +33,7 @@ app.use(passport.session());
 passport.use(GitHub);
 
 passport.serializeUser((user, done) => {
-  const { accesstoken, ...sessionUser } = user;
-  done(null, sessionUser);
+  done(null, user);
 });
 
 passport.deserializeUser((user, done) => {
