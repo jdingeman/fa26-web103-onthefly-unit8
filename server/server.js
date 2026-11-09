@@ -19,11 +19,17 @@ app.use(
     saveUninitialized: true,
   }),
 );
+
+app.set("trust proxy", 1);
 app.use(
   cors({
     origin: "https://fa26-web103-onthefly-client.onrender.com",
     methods: "GET,POST,PUT,DELETE,PATCH",
     credentials: true,
+    cookie: {
+      sameSite: "none",
+      secure: true,
+    },
   }),
 );
 
